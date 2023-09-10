@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
 const router = express.Router();
 const fetchuser = require("../middleware/fetchuser");
-const JWT_SERECT = "JayNepal$7890";
+const JWT_SECRET = "JayNepalAndNepali#6789";
 
 
 // Route 1. Create a User using:POST "/api/auth/createUser".No login required
@@ -51,7 +51,7 @@ router.post(
         },
       };
       // generating authentication token
-      const authToken = jwt.sign(data, JWT_SERECT);
+      const authToken = jwt.sign(data, JWT_SECRET);
       res.json({ authToken });
     } catch (error) {
       console.log(error.message);
@@ -97,7 +97,7 @@ router.post(
         }
       };
       //generating authentication token
-      const authToken = jwt.sign(data,JWT_SERECT);
+      const authToken = jwt.sign(data,JWT_SECRET);
       res.json({ authToken });
     } catch (error) {
       console.log(error.message);

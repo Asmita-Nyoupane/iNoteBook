@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const JWT_SERECT = "JayNepal$7890";
+const JWT_SECRET = "JayNepalAndNepali#6789";
 const fetchuser =(req,res,next)=>{
 
     //get the user rom jwt token and add id to request object
@@ -8,7 +8,7 @@ const fetchuser =(req,res,next)=>{
         return res.status(401).send({error:"Please authenticate using a valid token"});
     }
     try{
-    const data = jwt.verify(token,JWT_SERECT);
+    const data = jwt.verify(token,JWT_SECRET);
      req.user = data.user;
     next();
     }
