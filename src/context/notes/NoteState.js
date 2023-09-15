@@ -4,7 +4,7 @@ const NoteState = (props) => {
     
     const notesIntial= [
         {
-          "_id": "64fd790ba940e69367e3ab59",
+          "_id": "64fd790ba940e69367e0ab59",
           "user": "64fac66c5200d8645912f58f",
           "title": "Coding",
           "description": "learn daily ",
@@ -13,7 +13,7 @@ const NoteState = (props) => {
           "__v": 0
         },
         {
-            "_id": "64fd790ba940e69367e3ab59",
+            "_id": "64fd790ba940e69367e1ab59",
             "user": "64fac66c5200d8645912f58f",
             "title": "Coding",
             "description": "learn daily ",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
             "__v": 0
           },
           {
-            "_id": "64fd790ba940e69367e3ab59",
+            "_id": "64fd790ba940e69367e2ab59",
             "user": "64fac66c5200d8645912f58f",
             "title": "Coding",
             "description": "learn daily ",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             "__v": 0
           },
           {
-            "_id": "64fd790ba940e69367e3ab59",
+            "_id": "64fd790ba940e69367e8ab59",
             "user": "64fac66c5200d8645912f58f",
             "title": "Coding",
             "description": "learn daily ",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
             "__v": 0
           },
           {
-            "_id": "64fd790ba940e69367e3ab59",
+            "_id": "64fd790ba940e69367e5ab59",
             "user": "64fac66c5200d8645912f58f",
             "title": "Coding",
             "description": "learn daily ",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
             "__v": 0
           },
           {
-            "_id": "64fd790ba940e69367e3ab59",
+            "_id": "64fd790ba940e69367e4ab59",
             "user": "64fac66c5200d8645912f58f",
             "title": "Coding",
             "description": "learn daily ",
