@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Alert(props) {
   return (
@@ -8,4 +8,4 @@ function Alert(props) {
   )
 }
 
-export default Alert
+export default Alert;
