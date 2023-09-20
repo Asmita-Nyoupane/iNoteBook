@@ -22,7 +22,7 @@ router.post(
   ],
   async (req, res) => {
     // If there are errors, return bad request and the error
-
+let success =false
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -37,7 +37,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ errors: "Sorry a user with this email alreasy exists" });
+          .json({ success, errors: "Sorry a user with this email alreasy exists" });
       }
       user = await User.create({
         name: req.body.name,
@@ -52,7 +52,8 @@ router.post(
       };
       // generating authentication token
       const authToken = jwt.sign(data, JWT_SECRET);
-      res.json({ authToken });
+      success=true;
+      res.json({ success,authToken });
     } catch (error) {
       console.log(error.message);
       res.status(500).send("Some Error occurred");
@@ -68,6 +69,7 @@ router.post(
     body("password").exists().withMessage("Password can't be blank"),
   ],
   async (req, res) => {
+    let success = false
     // If there are errors, return bad request and the error
 
     const errors = validationResult(req);
@@ -81,14 +83,14 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credential" });
+          .json({  success,error: "Please try to login with correct credential" });
       }
       //check whether the user enter password and stored password match or not
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credential" });
+          .json({ success,error: "Please try to login with correct credential" });
       }
       //generating payload to send with token
       const data = {
@@ -98,7 +100,8 @@ router.post(
       };
       //generating authentication token
       const authToken = jwt.sign(data,JWT_SECRET);
-      res.json({ authToken });
+      success=true;
+      res.json({ success,authToken });
     } catch (error) {
       console.log(error.message);
       res.status(500).send("Some Error occurred");

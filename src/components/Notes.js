@@ -20,7 +20,6 @@ function Notes() {
 
 
   const handelClick = () => {
-    console.log("Updating note",note);
     refClose.current.click();
     editNote(note.id,note.etitle,note.edescription,note.etag);
   };
@@ -70,6 +69,8 @@ function Notes() {
                     id="etitle"
                     name="etitle"
                     value={note.etitle}
+                    minLength={5}
+                    required
                     onChange={onChange}
                   />
                 </div>
@@ -82,6 +83,8 @@ function Notes() {
                     name="edescription"
                     value={note.edescription}
                     onChange={onChange}
+                    minLength={5}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -93,6 +96,8 @@ function Notes() {
                     name="etag"
                     value={note.etag}
                     onChange={onChange}
+                    minLength={5}
+                    required
                   />
                 </div>
               </form>
@@ -106,7 +111,7 @@ function Notes() {
               >
                 Close
               </button>
-              <button  onClick={handelClick} type="button" className="btn btn-primary">
+              <button  disabled={note.etitle.length<5 || note.edescription.length<5} onClick={handelClick} type="button" className="btn btn-primary">
                Update Note
               </button>
             </div>
@@ -115,6 +120,9 @@ function Notes() {
       </div>
       <div className="row my-3">
         <h2>Your Notes</h2>
+        <div className="container mx-3">
+        {notes.length === 0 && 'No note to display' }
+        </div>
         {notes.map((note) => {
           return (
             <Noteitem key={note._id} updateNote={updateNote} note={note} />
