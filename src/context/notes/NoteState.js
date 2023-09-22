@@ -13,8 +13,7 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmYWM2NmM1MjAwZDg2NDU5MTJmNThmIn0sImlhdCI6MTY5NDMyNTg3NH0.K8v9i7f1gTXJkTM8GfB_jPdZA7f6yTqtcHhytzfvSmQ",
+        "auth-token":JSON.parse(localStorage.getItem("token"))
       },
     });
     // Logic to get all notes
@@ -28,8 +27,7 @@ const NoteState = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmYWM2NmM1MjAwZDg2NDU5MTJmNThmIn0sImlhdCI6MTY5NDMyNTg3NH0.K8v9i7f1gTXJkTM8GfB_jPdZA7f6yTqtcHhytzfvSmQ",
+        "auth-token":JSON.parse(localStorage.getItem("token"))
       },
 
       body: JSON.stringify({ title, description, tag }),
@@ -47,8 +45,7 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmYWM2NmM1MjAwZDg2NDU5MTJmNThmIn0sImlhdCI6MTY5NDMyNTg3NH0.K8v9i7f1gTXJkTM8GfB_jPdZA7f6yTqtcHhytzfvSmQ",
+        "auth-token":JSON.parse(localStorage.getItem("token"))
       },
     });
 
@@ -58,6 +55,7 @@ const NoteState = (props) => {
       return note._id !== id;
     });
     const json = await response.json();
+console.log(json)
     setNotes(newNotes);
   };
 
@@ -68,13 +66,13 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmYWM2NmM1MjAwZDg2NDU5MTJmNThmIn0sImlhdCI6MTY5NDMyNTg3NH0.K8v9i7f1gTXJkTM8GfB_jPdZA7f6yTqtcHhytzfvSmQ",
+        "auth-token":JSON.parse(localStorage.getItem("token"))
       },
 
       body: JSON.stringify({ title, description, tag }),
     });
     const json = await response.json();
+    console.log(json)
    
     // create a copy of note
     let newNotes = JSON.parse(JSON.stringify(notes))
