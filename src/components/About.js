@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div class="container mx-3">
+    <div className="container mx-3">
       <h2>
         Welcome to iNoteBook! Your Personalized Cloud-Based Note-Taking Haven!
       </h2>

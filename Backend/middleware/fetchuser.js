@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "JayNepalAndNepali#6789";
+const JWT_SECRET = process.env.REACT_APP_JWT_SECRET;
 const fetchuser =(req,res,next)=>{
 
     //get the user rom jwt token and add id to request object
